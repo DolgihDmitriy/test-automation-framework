@@ -40,3 +40,8 @@ build/
 
 # Maven
 .allure/
+
+# Logs
+logs/
+*.log
+log/
