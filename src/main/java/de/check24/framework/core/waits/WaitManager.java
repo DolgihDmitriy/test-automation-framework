@@ -1,5 +1,6 @@
 package de.check24.framework.core.waits;
 
+import de.check24.framework.core.config.ConfigReader;
 import de.check24.framework.core.driver.DriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ public final class WaitManager {
     private WaitManager() {}
 
     public static WebDriverWait getWait() {
-        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+        return new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(ConfigReader.CONFIG.timeout()));
     }
 
     public static WebElement waitForVisible(By locator) {
